@@ -295,16 +295,11 @@ p { margin: 0; }
   box-shadow: 0 40px 80px -40px rgba(29, 74, 43, 0.45);
   will-change: transform;
 }
-.hero-art-frame svg {
+.hero-art-frame img {
   display: block;
   width: 100%;
-  height: auto;
-  transform-origin: 50% 100%;
-  animation: sway 7s ease-in-out infinite;
-}
-@keyframes sway {
-  0%, 100% { transform: rotate(-1.2deg); }
-  50% { transform: rotate(1.2deg); }
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
 }
 .hero-actions {
   display: flex;
@@ -776,60 +771,8 @@ footer a:hover { color: var(--cream); }
           </div>
         </div>
         <figure class="hero-art reveal" style="--d:.2s">
-          <div class="hero-art-frame" id="hero-frame" role="img" aria-label="An oak tree in deep green on warm paper">
-            <svg viewBox="0 0 400 500" aria-hidden="true" focusable="false">
-              <ellipse cx="200" cy="452" rx="150" ry="18" fill="#1d4a2b" opacity="0.12"/>
-              <g stroke="#1d4a2b" stroke-width="10" stroke-linecap="round" fill="none">
-                <path d="M200 430 C 170 445, 140 448, 110 455"/>
-                <path d="M200 430 C 230 445, 260 448, 290 455"/>
-                <path d="M200 432 C 195 445, 190 450, 185 458"/>
-                <path d="M200 432 C 205 445, 210 450, 215 458"/>
-              </g>
-              <path d="M186 432 C 190 360, 184 318, 176 278 L 224 278 C 216 318, 210 360, 214 432 Z" fill="#1d4a2b"/>
-              <path d="M196 380 C 194 340, 192 310, 188 285" stroke="#10281a" stroke-width="3" fill="none" opacity="0.5"/>
-              <path d="M206 380 C 208 340, 210 310, 212 285" stroke="#10281a" stroke-width="3" fill="none" opacity="0.5"/>
-              <g stroke="#1d4a2b" stroke-width="8" stroke-linecap="round" fill="none">
-                <path d="M194 302 C 160 272, 130 252, 100 238"/>
-                <path d="M206 302 C 240 272, 270 252, 300 238"/>
-                <path d="M198 288 C 190 252, 188 222, 190 196"/>
-              </g>
-              <g fill="#2e6b3d">
-                <ellipse cx="118" cy="202" rx="58" ry="52"/>
-                <ellipse cx="282" cy="202" rx="58" ry="52"/>
-                <ellipse cx="200" cy="148" rx="68" ry="60"/>
-                <ellipse cx="88" cy="252" rx="46" ry="42"/>
-                <ellipse cx="312" cy="252" rx="46" ry="42"/>
-                <ellipse cx="152" cy="120" rx="40" ry="36"/>
-                <ellipse cx="248" cy="120" rx="40" ry="36"/>
-              </g>
-              <g fill="#1d4a2b">
-                <ellipse cx="160" cy="222" rx="52" ry="48" transform="rotate(-12 160 222)"/>
-                <ellipse cx="240" cy="222" rx="52" ry="48" transform="rotate(12 240 222)"/>
-                <ellipse cx="200" cy="182" rx="56" ry="52"/>
-                <ellipse cx="128" cy="272" rx="42" ry="38"/>
-                <ellipse cx="272" cy="272" rx="42" ry="38"/>
-                <ellipse cx="200" cy="252" rx="50" ry="46"/>
-              </g>
-              <g fill="#3a7a48">
-                <circle cx="96" cy="210" r="7"/>
-                <circle cx="140" cy="160" r="6"/>
-                <circle cx="262" cy="158" r="6"/>
-                <circle cx="306" cy="212" r="7"/>
-                <circle cx="200" cy="108" r="6"/>
-                <circle cx="112" cy="286" r="6"/>
-                <circle cx="290" cy="286" r="6"/>
-                <circle cx="182" cy="296" r="5"/>
-                <circle cx="222" cy="296" r="5"/>
-              </g>
-              <g>
-                <circle cx="150" cy="308" r="8" fill="#d9a441"/>
-                <rect x="144" y="296" width="12" height="7" rx="3" fill="#b57f26"/>
-                <circle cx="256" cy="302" r="8" fill="#d9a441"/>
-                <rect x="250" y="290" width="12" height="7" rx="3" fill="#b57f26"/>
-                <circle cx="205" cy="328" r="8" fill="#d9a441"/>
-                <rect x="199" y="316" width="12" height="7" rx="3" fill="#b57f26"/>
-              </g>
-            </svg>
+          <div class="hero-art-frame" id="hero-frame">
+            <img src="oak-tree.svg" alt="An oak tree in deep green on warm paper" width="600" height="600" fetchpriority="high">
           </div>
         </figure>
       </div>
