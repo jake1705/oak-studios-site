@@ -3,36 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Oak Studios LLC — Software for iOS and the web</title>
-<meta name="description" content="Oak Studios LLC designs and builds software and mobile applications for iOS and the web.">
+<title>Oak Studios — Software for iOS and the web</title>
+<meta name="description" content="Oak Studios designs and builds software and mobile applications for iOS and the web.">
 <link rel="canonical" href="https://oakstudiosllc.com/">
-<meta name="theme-color" content="#f5e3c1">
+<meta name="theme-color" content="#f8f1e2">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Oak Studios LLC">
+<meta property="og:title" content="Oak Studios">
 <meta property="og:description" content="Software and mobile applications for iOS and the web.">
 <meta property="og:url" content="https://oakstudiosllc.com/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23f5e3c1'/%3E%3Cg fill='%231e4a2c'%3E%3Ccircle cx='16' cy='12' r='6.5'/%3E%3Ccircle cx='10.8' cy='14.5' r='4.5'/%3E%3Ccircle cx='21.2' cy='14.5' r='4.5'/%3E%3Crect x='14.9' y='15' width='2.2' height='7.5' rx='1'/%3E%3C/g%3E%3Cpath d='M13.5 24.5 9.5 28M18.5 24.5 22.5 28M16 25v3' stroke='%231e4a2c' stroke-width='1.8' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23f8f1e2'/%3E%3Cg fill='%231d4a2b'%3E%3Ccircle cx='16' cy='12' r='6.5'/%3E%3Ccircle cx='10.8' cy='14.5' r='4.5'/%3E%3Ccircle cx='21.2' cy='14.5' r='4.5'/%3E%3Crect x='14.9' y='15' width='2.2' height='7.5' rx='1'/%3E%3C/g%3E%3Cpath d='M13.5 24.5 9.5 28M18.5 24.5 22.5 28M16 25v3' stroke='%231d4a2b' stroke-width='1.8' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"Oak Studios LLC","legalName":"Oak Studios LLC","url":"https://oakstudiosllc.com","email":"support@oakstudiosllc.com"}
 </script>
 <style>
 :root {
-  --paper: #f5e3c1;
-  --card: #fbf1dc;
+  --paper: #f8f1e2;
+  --card: #fffdf4;
   --ink: #2b332a;
-  --pine: #1e4a2c;
-  --pine-deep: #122b1c;
-  --cream: #f5e3c1;
-  --line: rgba(30, 74, 44, 0.20);
-  --line-soft: rgba(30, 74, 44, 0.12);
+  --pine: #1d4a2b;
+  --pine-deep: #10281a;
+  --cream: #f8f1e2;
+  --line: rgba(29, 74, 43, 0.22);
+  --line-soft: rgba(29, 74, 43, 0.12);
   --muted: #6f675a;
   --muted-on-dark: #c9bfa9;
   --amber: #d9a441;
+  --moss: #2e6b3d;
   --radius-lg: 28px;
   --radius-sm: 14px;
   --max: 1120px;
   --nav-h: 64px;
   --ease: cubic-bezier(.2, .7, .2, 1);
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
   --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
 }
@@ -55,6 +57,18 @@ body {
   letter-spacing: -0.011em;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* Film grain */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
 }
 
 ::selection { background: var(--pine); color: var(--cream); }
@@ -71,7 +85,7 @@ a { color: inherit; }
   position: absolute;
   left: 16px;
   top: -60px;
-  z-index: 100;
+  z-index: 300;
   padding: 12px 16px;
   background: var(--pine);
   color: var(--cream);
@@ -79,6 +93,26 @@ a { color: inherit; }
   text-decoration: none;
 }
 .skip:focus { top: 12px; }
+
+/* Scroll progress */
+.progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 120;
+  height: 3px;
+  width: 100%;
+  background: transparent;
+  pointer-events: none;
+}
+.progress span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, var(--pine), var(--moss));
+  transform: scaleX(0);
+  transform-origin: left;
+}
 
 .wrap {
   width: 100%;
@@ -88,28 +122,39 @@ a { color: inherit; }
 }
 
 .eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--pine);
-  margin-bottom: 20px;
+  margin: 0 0 20px;
+}
+.eyebrow::before {
+  content: "";
+  width: 34px;
+  height: 2px;
+  background: var(--pine);
+  border-radius: 2px;
 }
 
 /* Navigation */
 .nav {
   position: fixed;
   inset: 0 0 auto 0;
-  z-index: 50;
+  z-index: 100;
   height: var(--nav-h);
-  transition: background-color .4s var(--ease), border-color .4s var(--ease);
+  transition: background-color .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease);
   border-bottom: 1px solid transparent;
 }
 .nav.is-scrolled {
-  background: rgba(245, 227, 193, 0.88);
+  background: rgba(248, 241, 226, 0.88);
   -webkit-backdrop-filter: saturate(160%) blur(16px);
   backdrop-filter: saturate(160%) blur(16px);
   border-bottom-color: var(--line-soft);
+  box-shadow: 0 12px 32px -20px rgba(29, 74, 43, 0.35);
 }
 .nav .wrap {
   height: 100%;
@@ -125,13 +170,16 @@ a { color: inherit; }
   min-height: 44px;
   font-family: var(--serif);
   font-weight: 700;
-  font-size: 19px;
+  font-size: 20px;
   letter-spacing: -0.01em;
   color: var(--pine);
   text-decoration: none;
   white-space: nowrap;
+  transition: transform .3s var(--ease-out);
 }
-.brand-mark { width: 28px; height: 28px; flex: none; }
+.brand:hover { transform: translateY(-1px); }
+.brand-mark { width: 30px; height: 30px; flex: none; transition: transform .5s var(--ease-out); }
+.brand:hover .brand-mark { transform: rotate(-8deg) scale(1.06); }
 .nav ul {
   display: flex;
   gap: 4px;
@@ -153,8 +201,9 @@ a { color: inherit; }
   color: var(--muted);
   text-decoration: none;
   white-space: nowrap;
-  transition: color .25s var(--ease);
+  transition: color .25s var(--ease), transform .25s var(--ease);
 }
+.nav li a:hover { color: var(--pine); transform: translateY(-1px); }
 .nav li a::after {
   content: "";
   position: absolute;
@@ -168,7 +217,7 @@ a { color: inherit; }
   transform-origin: left;
   transition: transform .35s var(--ease);
 }
-.nav li a:hover { color: var(--pine); }
+.nav li a:hover::after { transform: scaleX(0.6); }
 .nav li a[aria-current="true"] { color: var(--pine); }
 .nav li a[aria-current="true"]::after { transform: scaleX(1); }
 
@@ -193,7 +242,7 @@ h1, h2, h3 {
   text-wrap: balance;
 }
 h2 {
-  font-size: clamp(38px, 6.4vw, 72px);
+  font-size: clamp(40px, 6.6vw, 76px);
   max-width: 16ch;
 }
 h3 {
@@ -219,8 +268,8 @@ p { margin: 0; }
   inset: -20%;
   z-index: -1;
   background:
-    radial-gradient(520px circle at var(--gx, 50%) var(--gy, 40%), rgba(30, 74, 44, 0.10), transparent 60%),
-    radial-gradient(900px circle at 50% 120%, rgba(30, 74, 44, 0.07), transparent 60%);
+    radial-gradient(560px circle at var(--gx, 50%) var(--gy, 40%), rgba(29, 74, 43, 0.12), transparent 60%),
+    radial-gradient(900px circle at 50% 120%, rgba(29, 74, 43, 0.08), transparent 60%);
   pointer-events: none;
 }
 .hero-grid {
@@ -231,10 +280,10 @@ p { margin: 0; }
   width: 100%;
 }
 .hero h1 {
-  font-size: clamp(52px, 8.5vw, 108px);
+  font-size: clamp(56px, 9vw, 118px);
   max-width: 15ch;
 }
-.hero-art { margin: 0; }
+.hero-art { margin: 0; perspective: 900px; }
 .hero-art-frame {
   width: 100%;
   max-width: 460px;
@@ -242,10 +291,21 @@ p { margin: 0; }
   border-radius: 230px 230px var(--radius-lg) var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--line);
-  background: var(--card);
-  box-shadow: 0 32px 64px -32px rgba(30, 74, 44, 0.35);
+  background: linear-gradient(180deg, #fdf6e6 0%, var(--card) 100%);
+  box-shadow: 0 40px 80px -40px rgba(29, 74, 43, 0.45);
+  will-change: transform;
 }
-.hero-art-frame svg { display: block; width: 100%; height: auto; }
+.hero-art-frame svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform-origin: 50% 100%;
+  animation: sway 7s ease-in-out infinite;
+}
+@keyframes sway {
+  0%, 100% { transform: rotate(-1.2deg); }
+  50% { transform: rotate(1.2deg); }
+}
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -259,7 +319,7 @@ p { margin: 0; }
   width: 2px;
   height: 48px;
   background: linear-gradient(var(--pine), transparent);
-  opacity: .45;
+  opacity: .5;
   transform: translateX(-50%);
   animation: cue 2.4s var(--ease) infinite;
 }
@@ -270,26 +330,81 @@ p { margin: 0; }
   100% { transform: translateX(-50%) scaleY(0); transform-origin: bottom; }
 }
 
+/* Marquee */
+.marquee {
+  background: var(--pine-deep);
+  color: var(--cream);
+  overflow: hidden;
+  padding: 16px 0;
+  border-top: 1px solid rgba(248, 241, 226, 0.12);
+  border-bottom: 1px solid rgba(248, 241, 226, 0.12);
+}
+.marquee-track {
+  display: flex;
+  gap: 0;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+.marquee-track span {
+  display: inline-flex;
+  align-items: center;
+  gap: 28px;
+  padding-right: 28px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.marquee-track span::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--amber);
+  flex: none;
+}
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
 /* Buttons */
 .btn {
+  position: relative;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 50px;
-  padding: 0 26px;
+  min-height: 52px;
+  padding: 0 28px;
   border-radius: 999px;
   font: inherit;
   font-size: 16px;
   font-weight: 600;
   text-decoration: none;
   border: 1px solid transparent;
-  transition: transform .2s var(--ease), background-color .25s var(--ease), border-color .25s var(--ease);
+  transition: transform .25s var(--ease-out), background-color .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease);
 }
-.btn:active { transform: scale(.97); }
-.btn-primary { background: var(--pine); color: var(--cream); }
-.btn-primary:hover { background: var(--pine-deep); }
-.btn-ghost { color: var(--pine); border-color: rgba(30, 74, 44, 0.45); }
-.btn-ghost:hover { border-color: var(--pine); }
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0) scale(.97); }
+.btn-primary {
+  background: var(--pine);
+  color: var(--cream);
+  box-shadow: 0 16px 32px -16px rgba(29, 74, 43, 0.6);
+}
+.btn-primary:hover { background: var(--pine-deep); box-shadow: 0 20px 40px -16px rgba(29, 74, 43, 0.7); }
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(248, 241, 226, 0.35) 50%, transparent 60%);
+  transform: translateX(-130%);
+  transition: transform .8s var(--ease);
+  pointer-events: none;
+}
+.btn-primary:hover::after { transform: translateX(130%); }
+.btn-ghost { color: var(--pine); border-color: rgba(29, 74, 43, 0.45); background: transparent; }
+.btn-ghost:hover { border-color: var(--pine); background: rgba(29, 74, 43, 0.06); }
 
 .text-link {
   display: inline-flex;
@@ -317,39 +432,67 @@ p { margin: 0; }
   background: var(--card);
   border: 1px solid var(--line-soft);
   overflow: hidden;
-  transition: transform .45s var(--ease), border-color .45s var(--ease), box-shadow .45s var(--ease);
+  transition: transform .5s var(--ease-out), border-color .4s var(--ease), box-shadow .5s var(--ease);
+}
+.panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(420px circle at 50% 0%, rgba(29, 74, 43, 0.08), transparent 65%);
+  opacity: 0;
+  transition: opacity .5s var(--ease);
+  pointer-events: none;
 }
 .panel:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   border-color: var(--line);
-  box-shadow: 0 24px 48px -28px rgba(30, 74, 44, 0.35);
+  box-shadow: 0 30px 60px -30px rgba(29, 74, 43, 0.4);
 }
+.panel:hover::before { opacity: 1; }
 .panel .platform {
   display: block;
   margin-bottom: 64px;
   font-family: var(--serif);
-  font-size: clamp(44px, 6vw, 68px);
+  font-size: clamp(46px, 6vw, 70px);
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1;
   color: var(--pine);
+  transition: transform .5s var(--ease-out);
 }
+.panel:hover .platform { transform: translateY(-4px); }
 .panel p { margin-top: 12px; color: var(--muted); max-width: 40ch; }
 
 /* Spell Quest feature panel */
 .feature {
+  position: relative;
+  overflow: hidden;
   margin-top: 20px;
   border-radius: var(--radius-lg);
   background: var(--pine-deep);
   color: var(--cream);
-  padding: 48px 44px;
+  padding: 52px 48px;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 32px;
   align-items: center;
-  border: 1px solid rgba(245, 227, 193, 0.14);
+  border: 1px solid rgba(248, 241, 226, 0.14);
+  transition: transform .5s var(--ease-out), box-shadow .5s var(--ease);
 }
-.feature h3 { color: var(--cream); font-size: clamp(26px, 3.4vw, 36px); margin-top: 16px; }
+.feature:hover { transform: translateY(-4px); box-shadow: 0 30px 60px -24px rgba(16, 40, 26, 0.8); }
+.feature::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(480px circle at 80% 20%, rgba(217, 164, 65, 0.14), transparent 60%);
+  animation: drift 9s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+@keyframes drift {
+  from { transform: translate(-4%, -2%) rotate(-2deg); }
+  to { transform: translate(4%, 3%) rotate(2deg); }
+}
+.feature h3 { color: var(--cream); font-size: clamp(28px, 3.6vw, 38px); margin-top: 18px; }
 .feature p { margin-top: 12px; color: var(--muted-on-dark); max-width: 52ch; }
 .pill {
   display: inline-block;
@@ -361,8 +504,14 @@ p { margin: 0; }
   background: var(--amber);
   border-radius: 999px;
   padding: 7px 14px;
+  animation: pill-glow 3.2s ease-in-out infinite;
 }
-.feature-mark { width: 120px; height: 120px; flex: none; }
+@keyframes pill-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(217, 164, 65, 0.45); }
+  50% { box-shadow: 0 0 0 7px rgba(217, 164, 65, 0); }
+}
+.feature-mark { width: 128px; height: 128px; flex: none; transition: transform .6s var(--ease-out); }
+.feature:hover .feature-mark { transform: rotate(8deg) scale(1.08); }
 
 /* Approach */
 .approach-list {
@@ -373,7 +522,8 @@ p { margin: 0; }
   padding: 0;
   list-style: none;
 }
-.approach-list li { border-top: 2px solid var(--pine); padding-top: 24px; }
+.approach-list li { border-top: 2px solid var(--pine); padding-top: 24px; transition: transform .4s var(--ease-out); }
+.approach-list li:hover { transform: translateY(-4px); }
 .approach-list p { margin-top: 12px; color: var(--muted); }
 
 /* Services (inverted band) */
@@ -381,6 +531,7 @@ p { margin: 0; }
 .services h2, .services h3 { color: var(--cream); }
 .services .lede { color: var(--muted-on-dark); }
 .services .eyebrow { color: var(--amber); }
+.services .eyebrow::before { background: var(--amber); }
 .services :focus-visible { outline-color: var(--amber); }
 .service-grid {
   display: grid;
@@ -389,24 +540,40 @@ p { margin: 0; }
   margin-top: 64px;
 }
 .card {
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   padding: 36px 32px 40px;
   border-radius: var(--radius-lg);
-  background: rgba(245, 227, 193, 0.06);
-  border: 1px solid rgba(245, 227, 193, 0.16);
-  transition: transform .45s var(--ease), background-color .45s var(--ease);
+  background: rgba(248, 241, 226, 0.06);
+  border: 1px solid rgba(248, 241, 226, 0.16);
+  transition: transform .5s var(--ease-out), background-color .4s var(--ease), border-color .4s var(--ease);
+}
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--amber), var(--moss));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .5s var(--ease-out);
 }
 .card:hover {
-  transform: translateY(-6px);
-  background: rgba(245, 227, 193, 0.09);
+  transform: translateY(-8px);
+  background: rgba(248, 241, 226, 0.09);
+  border-color: rgba(248, 241, 226, 0.3);
 }
+.card:hover::after { transform: scaleX(1); }
 .card p { margin-top: 12px; color: var(--muted-on-dark); }
 .card ul {
   margin: 24px 0 0;
   padding: 20px 0 0;
   list-style: none;
-  border-top: 1px solid rgba(245, 227, 193, 0.18);
+  border-top: 1px solid rgba(248, 241, 226, 0.18);
   font-size: 15px;
   color: #ddd2b8;
 }
@@ -464,9 +631,9 @@ p { margin: 0; }
   border-radius: var(--radius-sm);
   background: var(--card);
   border: 1px solid var(--line-soft);
-  transition: border-color .3s var(--ease);
+  transition: border-color .3s var(--ease), transform .4s var(--ease-out), box-shadow .4s var(--ease);
 }
-.legal details:hover { border-color: var(--line); }
+.legal details:hover { border-color: var(--line); transform: translateY(-2px); box-shadow: 0 16px 32px -20px rgba(29, 74, 43, 0.35); }
 .legal summary {
   display: flex;
   align-items: center;
@@ -504,7 +671,7 @@ p { margin: 0; }
 footer {
   background: var(--pine-deep);
   color: var(--muted-on-dark);
-  padding: 36px 0 max(36px, env(safe-area-inset-bottom));
+  padding: 40px 0 max(40px, env(safe-area-inset-bottom));
   font-size: 13px;
 }
 footer .wrap {
@@ -513,18 +680,19 @@ footer .wrap {
   justify-content: space-between;
   gap: 8px 24px;
 }
-footer a { color: var(--muted-on-dark); text-decoration: none; }
+footer a { color: var(--muted-on-dark); text-decoration: none; transition: color .25s var(--ease); }
 footer a:hover { color: var(--cream); }
 
 /* Reveal */
 .reveal {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity .9s var(--ease), transform .9s var(--ease);
+  transform: translateY(28px);
+  filter: blur(6px);
+  transition: opacity 1s var(--ease-out), transform 1s var(--ease-out), filter 1s var(--ease-out);
   transition-delay: var(--d, 0s);
 }
-.reveal.is-in { opacity: 1; transform: none; }
-.no-js .reveal { opacity: 1; transform: none; }
+.reveal.is-in { opacity: 1; transform: none; filter: blur(0); }
+.no-js .reveal { opacity: 1; transform: none; filter: none; }
 
 /* Responsive */
 @media (max-width: 900px) {
@@ -556,7 +724,8 @@ footer a:hover { color: var(--cream); }
   .nav li a { padding: 0 7px; font-size: 12px; }
 }
 @media (hover: none) {
-  .panel:hover, .card:hover { transform: none; }
+  .panel:hover, .card:hover, .feature:hover, .legal details:hover { transform: none; }
+  .btn-primary::after { display: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -565,18 +734,20 @@ footer a:hover { color: var(--cream); }
     transition-duration: .01ms !important;
     transition-delay: 0s !important;
   }
-  .reveal { opacity: 1; transform: none; }
+  .reveal { opacity: 1; transform: none; filter: none; }
   .scroll-cue { display: none; }
+  .marquee-track { animation: none; flex-wrap: wrap; width: auto; }
 }
 </style>
 </head>
 <body class="no-js">
 <a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
 
 <header class="nav" id="nav">
   <div class="wrap">
-    <a class="brand" href="#top" aria-label="Oak Studios LLC, back to top">
-      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><g fill="#1e4a2c"><circle cx="16" cy="12" r="6.5"/><circle cx="10.8" cy="14.5" r="4.5"/><circle cx="21.2" cy="14.5" r="4.5"/><rect x="14.9" y="15" width="2.2" height="7.5" rx="1"/></g><path d="M13.5 24.5 9.5 28M18.5 24.5 22.5 28M16 25v3" stroke="#1e4a2c" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
+    <a class="brand" href="#top" aria-label="Oak Studios, back to top">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><g fill="#1d4a2b"><circle cx="16" cy="12" r="6.5"/><circle cx="10.8" cy="14.5" r="4.5"/><circle cx="21.2" cy="14.5" r="4.5"/><rect x="14.9" y="15" width="2.2" height="7.5" rx="1"/></g><path d="M13.5 24.5 9.5 28M18.5 24.5 22.5 28M16 25v3" stroke="#1d4a2b" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
       <span class="brand-name">Oak Studios</span>
     </a>
     <nav aria-label="Primary">
@@ -596,7 +767,7 @@ footer a:hover { color: var(--cream); }
     <div class="wrap">
       <div class="hero-grid">
         <div>
-          <p class="eyebrow reveal">Oak Studios LLC</p>
+          <p class="eyebrow reveal">Oak Studios</p>
           <h1 id="hero-title" class="reveal" style="--d:.08s">Software for iOS and the web.</h1>
           <p class="lede reveal" style="--d:.16s">Native apps and web software, designed and built by Oak Studios.</p>
           <div class="hero-actions reveal" style="--d:.24s">
@@ -605,40 +776,58 @@ footer a:hover { color: var(--cream); }
           </div>
         </div>
         <figure class="hero-art reveal" style="--d:.2s">
-          <div class="hero-art-frame" role="img" aria-label="An oak tree in deep green on warm paper">
+          <div class="hero-art-frame" id="hero-frame" role="img" aria-label="An oak tree in deep green on warm paper">
             <svg viewBox="0 0 400 500" aria-hidden="true" focusable="false">
-              <ellipse cx="200" cy="452" rx="150" ry="18" fill="#1e4a2c" opacity="0.12"/>
-              <g stroke="#1e4a2c" stroke-width="10" stroke-linecap="round" fill="none">
+              <ellipse cx="200" cy="452" rx="150" ry="18" fill="#1d4a2b" opacity="0.12"/>
+              <g stroke="#1d4a2b" stroke-width="10" stroke-linecap="round" fill="none">
                 <path d="M200 430 C 170 445, 140 448, 110 455"/>
                 <path d="M200 430 C 230 445, 260 448, 290 455"/>
                 <path d="M200 432 C 195 445, 190 450, 185 458"/>
                 <path d="M200 432 C 205 445, 210 450, 215 458"/>
               </g>
-              <path d="M188 430 C 190 360, 186 320, 178 280 L 222 280 C 214 320, 210 360, 212 430 Z" fill="#1e4a2c"/>
-              <g stroke="#1e4a2c" stroke-width="8" stroke-linecap="round" fill="none">
-                <path d="M196 300 C 160 270, 130 250, 100 235"/>
-                <path d="M204 300 C 240 270, 270 250, 300 235"/>
-                <path d="M198 285 C 190 250, 188 220, 190 195"/>
+              <path d="M186 432 C 190 360, 184 318, 176 278 L 224 278 C 216 318, 210 360, 214 432 Z" fill="#1d4a2b"/>
+              <path d="M196 380 C 194 340, 192 310, 188 285" stroke="#10281a" stroke-width="3" fill="none" opacity="0.5"/>
+              <path d="M206 380 C 208 340, 210 310, 212 285" stroke="#10281a" stroke-width="3" fill="none" opacity="0.5"/>
+              <g stroke="#1d4a2b" stroke-width="8" stroke-linecap="round" fill="none">
+                <path d="M194 302 C 160 272, 130 252, 100 238"/>
+                <path d="M206 302 C 240 272, 270 252, 300 238"/>
+                <path d="M198 288 C 190 252, 188 222, 190 196"/>
               </g>
-              <g fill="#2f6b3e">
-                <circle cx="120" cy="200" r="55"/>
-                <circle cx="280" cy="200" r="55"/>
-                <circle cx="200" cy="150" r="65"/>
-                <circle cx="90" cy="250" r="45"/>
-                <circle cx="310" cy="250" r="45"/>
+              <g fill="#2e6b3d">
+                <ellipse cx="118" cy="202" rx="58" ry="52"/>
+                <ellipse cx="282" cy="202" rx="58" ry="52"/>
+                <ellipse cx="200" cy="148" rx="68" ry="60"/>
+                <ellipse cx="88" cy="252" rx="46" ry="42"/>
+                <ellipse cx="312" cy="252" rx="46" ry="42"/>
+                <ellipse cx="152" cy="120" rx="40" ry="36"/>
+                <ellipse cx="248" cy="120" rx="40" ry="36"/>
               </g>
-              <g fill="#1e4a2c">
-                <circle cx="160" cy="220" r="50"/>
-                <circle cx="240" cy="220" r="50"/>
-                <circle cx="200" cy="180" r="55"/>
-                <circle cx="130" cy="270" r="40"/>
-                <circle cx="270" cy="270" r="40"/>
-                <circle cx="200" cy="250" r="48"/>
+              <g fill="#1d4a2b">
+                <ellipse cx="160" cy="222" rx="52" ry="48" transform="rotate(-12 160 222)"/>
+                <ellipse cx="240" cy="222" rx="52" ry="48" transform="rotate(12 240 222)"/>
+                <ellipse cx="200" cy="182" rx="56" ry="52"/>
+                <ellipse cx="128" cy="272" rx="42" ry="38"/>
+                <ellipse cx="272" cy="272" rx="42" ry="38"/>
+                <ellipse cx="200" cy="252" rx="50" ry="46"/>
               </g>
-              <g fill="#d9a441">
-                <circle cx="150" cy="305" r="7"/>
-                <circle cx="255" cy="300" r="7"/>
-                <circle cx="205" cy="325" r="7"/>
+              <g fill="#3a7a48">
+                <circle cx="96" cy="210" r="7"/>
+                <circle cx="140" cy="160" r="6"/>
+                <circle cx="262" cy="158" r="6"/>
+                <circle cx="306" cy="212" r="7"/>
+                <circle cx="200" cy="108" r="6"/>
+                <circle cx="112" cy="286" r="6"/>
+                <circle cx="290" cy="286" r="6"/>
+                <circle cx="182" cy="296" r="5"/>
+                <circle cx="222" cy="296" r="5"/>
+              </g>
+              <g>
+                <circle cx="150" cy="308" r="8" fill="#d9a441"/>
+                <rect x="144" y="296" width="12" height="7" rx="3" fill="#b57f26"/>
+                <circle cx="256" cy="302" r="8" fill="#d9a441"/>
+                <rect x="250" y="290" width="12" height="7" rx="3" fill="#b57f26"/>
+                <circle cx="205" cy="328" r="8" fill="#d9a441"/>
+                <rect x="199" y="316" width="12" height="7" rx="3" fill="#b57f26"/>
               </g>
             </svg>
           </div>
@@ -647,6 +836,13 @@ footer a:hover { color: var(--cream); }
     </div>
     <span class="scroll-cue" aria-hidden="true"></span>
   </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Native iOS apps</span><span>Web applications</span><span>Interface design</span><span>App Store release</span><span>Built for kids&rsquo; privacy</span>
+      <span>Native iOS apps</span><span>Web applications</span><span>Interface design</span><span>App Store release</span><span>Built for kids&rsquo; privacy</span>
+    </div>
+  </div>
 
   <section id="work" aria-labelledby="work-title">
     <div class="wrap">
@@ -671,7 +867,7 @@ footer a:hover { color: var(--cream); }
           <h3>Spell Quest</h3>
           <p>A spelling adventure for ages 4&ndash;7. Kids pick an animal buddy, spell to feed and grow it, and explore phonics lands as they learn. No ads, no in-app purchases, no accounts &mdash; just play.</p>
         </div>
-        <svg class="feature-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><g fill="#f5e3c1"><circle cx="16" cy="12" r="6.5"/><circle cx="10.8" cy="14.5" r="4.5"/><circle cx="21.2" cy="14.5" r="4.5"/><rect x="14.9" y="15" width="2.2" height="7.5" rx="1"/></g><path d="M13.5 24.5 9.5 28M18.5 24.5 22.5 28M16 25v3" stroke="#f5e3c1" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
+        <svg class="feature-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><g fill="#f8f1e2"><circle cx="16" cy="12" r="6.5"/><circle cx="10.8" cy="14.5" r="4.5"/><circle cx="21.2" cy="14.5" r="4.5"/><rect x="14.9" y="15" width="2.2" height="7.5" rx="1"/></g><path d="M13.5 24.5 9.5 28M18.5 24.5 22.5 28M16 25v3" stroke="#f8f1e2" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
       </article>
     </div>
   </section>
@@ -811,6 +1007,23 @@ footer a:hover { color: var(--cream); }
   const onScroll = () => nav.classList.toggle('is-scrolled', scrollY > 8);
   addEventListener('scroll', onScroll, { passive: true });
   onScroll();
+
+  // Scroll progress bar + hero parallax
+  const bar = document.getElementById('progress-bar');
+  const frame = document.getElementById('hero-frame');
+  let ticking = false;
+  const onScrollFx = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    if (bar) bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, scrollY / max) : 0) + ')';
+    if (frame && !reduce && scrollY < innerHeight) {
+      frame.style.transform = 'translateY(' + (scrollY * 0.08).toFixed(1) + 'px)';
+    }
+    ticking = false;
+  };
+  addEventListener('scroll', () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(onScrollFx); }
+  }, { passive: true });
+  onScrollFx();
 
   // Reveal on scroll
   const reveals = document.querySelectorAll('.reveal');
