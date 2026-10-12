@@ -178,8 +178,8 @@ a { color: inherit; }
   transition: transform .3s var(--ease-out);
 }
 .brand:hover { transform: translateY(-1px); }
-.brand-mark { width: 30px; height: 30px; flex: none; transition: transform .5s var(--ease-out); }
-.brand:hover .brand-mark { transform: rotate(-8deg) scale(1.06); }
+.brand-mark { width: 32px; height: 32px; flex: none; border-radius: 50%; object-fit: cover; transition: transform .5s var(--ease-out); }
+.brand:hover .brand-mark { transform: scale(1.08); }
 .nav ul {
   display: flex;
   gap: 4px;
@@ -742,7 +742,7 @@ footer a:hover { color: var(--cream); }
 <header class="nav" id="nav">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Oak Studios, back to top">
-      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><g fill="#1d4a2b"><circle cx="16" cy="12" r="6.5"/><circle cx="10.8" cy="14.5" r="4.5"/><circle cx="21.2" cy="14.5" r="4.5"/><rect x="14.9" y="15" width="2.2" height="7.5" rx="1"/></g><path d="M13.5 24.5 9.5 28M18.5 24.5 22.5 28M16 25v3" stroke="#1d4a2b" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
+      <img class="brand-mark" src="oak-tree.svg" alt="Oak Studios logo" width="64" height="64">
       <span class="brand-name">Oak Studios</span>
     </a>
     <nav aria-label="Primary">
@@ -789,8 +789,7 @@ footer a:hover { color: var(--cream); }
 
   <section id="work" aria-labelledby="work-title">
     <div class="wrap">
-      <p class="eyebrow reveal">Work</p>
-      <h2 id="work-title" class="reveal">Two platforms. One standard.</h2>
+      <h2 id="work-title" class="reveal">Work</h2>
       <p class="lede reveal" style="--d:.1s">We make software and mobile applications. Everything we ship is built to feel native to where it runs.</p>
       <div class="work-grid">
         <article class="panel reveal">
@@ -817,8 +816,7 @@ footer a:hover { color: var(--cream); }
 
   <section id="approach" aria-labelledby="approach-title">
     <div class="wrap">
-      <p class="eyebrow reveal">Approach</p>
-      <h2 id="approach-title" class="reveal">Small scope. Close attention.</h2>
+      <h2 id="approach-title" class="reveal">Approach</h2>
       <p class="lede reveal" style="--d:.1s">We keep projects focused, so every detail gets the time it needs.</p>
       <ul class="approach-list">
         <li class="reveal">
@@ -839,8 +837,7 @@ footer a:hover { color: var(--cream); }
 
   <section class="services" id="services" aria-labelledby="services-title">
     <div class="wrap">
-      <p class="eyebrow reveal">Services</p>
-      <h2 id="services-title" class="reveal">Three ways we work, from first sketch to release.</h2>
+      <h2 id="services-title" class="reveal">Services</h2>
       <div class="service-grid">
         <article class="card reveal">
           <h3>iOS app design and development</h3>
@@ -875,8 +872,7 @@ footer a:hover { color: var(--cream); }
 
   <section id="company" aria-labelledby="company-title">
     <div class="wrap">
-      <p class="eyebrow reveal">Company</p>
-      <h2 id="company-title" class="reveal">A small studio, growing slowly.</h2>
+      <h2 id="company-title" class="reveal">Company</h2>
       <p class="lede reveal" style="--d:.1s">Oak Studios is an independent software studio. We&rsquo;re currently building Spell Quest, a spelling game for young kids &mdash; deliberately, and with care.</p>
       <dl class="facts reveal" style="--d:.15s">
         <dt>Legal name</dt>
@@ -895,8 +891,7 @@ footer a:hover { color: var(--cream); }
 
   <section class="contact" id="contact" aria-labelledby="contact-title">
     <div class="wrap">
-      <p class="eyebrow reveal">Contact</p>
-      <h2 id="contact-title" class="reveal">Let&rsquo;s talk.</h2>
+      <h2 id="contact-title" class="reveal">Contact</h2>
       <p class="lede reveal" style="--d:.1s">For project inquiries, app support, or anything else, email us. We reply within two business days.</p>
       <a class="contact-email reveal" style="--d:.2s" href="mailto:support@oakstudiosllc.com">support@oakstudiosllc.com</a>
       <div class="copy-row reveal" style="--d:.25s">
