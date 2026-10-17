@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Spell Quest Privacy Policy — Oak Studios</title>
+<meta name="description" content="Privacy policy for Spell Quest, a phonics and spelling game for kids by Oak Studios.">
+<link rel="canonical" href="https://oakstudiosllc.com/spell-quest/privacy/">
+<meta name="theme-color" content="#f8f1e2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spell Quest Privacy Policy">
+<meta property="og:description" content="Privacy policy for Spell Quest, a phonics and spelling game for kids by Oak Studios.">
+<meta property="og:url" content="https://oakstudiosllc.com/spell-quest/privacy/">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<style>
+:root {
+  --paper: #f8f1e2;
+  --card: #fffdf4;
+  --ink: #2b332a;
+  --pine: #1d4a2b;
+  --pine-deep: #10281a;
+  --cream: #f8f1e2;
+  --line: rgba(29, 74, 43, 0.20);
+  --line-soft: rgba(29, 74, 43, 0.12);
+  --muted: #6f675a;
+  --muted-on-dark: #c9bfa9;
+  --nav-h: 64px;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-h) + 16px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+  letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+}
+
+::selection { background: var(--pine); color: var(--cream); }
+
+:focus-visible {
+  outline: 2px solid var(--pine);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.skip {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 300;
+  padding: 12px 16px;
+  background: var(--pine);
+  color: var(--cream);
+  border-radius: 10px;
+  text-decoration: none;
+}
+.skip:focus { top: 12px; }
+
+.wrap {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding-left: max(24px, env(safe-area-inset-left));
+  padding-right: max(24px, env(safe-area-inset-right));
+}
+
+/* Navigation */
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  height: var(--nav-h);
+  border-bottom: 1px solid transparent;
+  transition: background-color .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease);
+}
+.nav.is-scrolled {
+  background: rgba(248, 241, 226, 0.88);
+  -webkit-backdrop-filter: saturate(160%) blur(16px);
+  backdrop-filter: saturate(160%) blur(16px);
+  border-bottom-color: var(--line-soft);
+  box-shadow: 0 12px 32px -20px rgba(29, 74, 43, 0.35);
+}
+.nav .wrap {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  color: var(--pine);
+  white-space: nowrap;
+}
+.brand-mark { width: 32px; height: 32px; flex: none; border-radius: 50%; object-fit: cover; }
+.nav-back {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 4px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  text-decoration: none;
+  transition: color .25s var(--ease);
+}
+.nav-back:hover { color: var(--pine); }
+
+/* Header */
+.doc-head {
+  padding: calc(var(--nav-h) + 88px) 0 48px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--pine);
+}
+.eyebrow::before {
+  content: "";
+  width: 34px;
+  height: 2px;
+  background: var(--pine);
+  border-radius: 2px;
+}
+h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(38px, 6.4vw, 68px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.06;
+  color: var(--pine);
+  text-wrap: balance;
+}
+.meta {
+  margin: 28px 0 0;
+  font-size: 15px;
+  color: var(--muted);
+}
+.meta span + span::before { content: " · "; }
+.summary {
+  margin: 32px 0 0;
+  font-size: clamp(19px, 2.2vw, 22px);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+  color: var(--muted);
+  max-width: 52ch;
+}
+
+/* Body */
+main { padding: 8px 0 24px; }
+section { padding: 48px 0 8px; }
+section + section { border-top: 1px solid var(--line-soft); }
+h2 {
+  margin: 0 0 20px;
+  font-family: var(--serif);
+  font-size: clamp(26px, 3.6vw, 34px);
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  color: var(--pine);
+  scroll-margin-top: calc(var(--nav-h) + 24px);
+}
+p { margin: 0 0 18px; color: var(--muted); max-width: 66ch; }
+p:last-child { margin-bottom: 0; }
+strong { color: var(--ink); font-weight: 600; }
+ul {
+  margin: 0 0 20px;
+  padding: 0;
+  list-style: none;
+  max-width: 66ch;
+}
+li {
+  position: relative;
+  padding: 0 0 0 22px;
+  margin-bottom: 10px;
+  color: var(--muted);
+}
+li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 12px;
+  width: 6px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--pine);
+}
+a.link {
+  color: var(--pine);
+  font-weight: 600;
+  text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 2px no-repeat;
+  transition: background-size .35s var(--ease);
+}
+a.link:hover { background-size: 100% 2px; }
+
+.note {
+  margin: 8px 0 0;
+  padding: 28px 28px 20px;
+  border-radius: 20px;
+  background: var(--card);
+  border: 1px solid var(--line-soft);
+}
+.note p { max-width: none; }
+.note h2 { font-size: 20px; margin-bottom: 12px; }
+
+.contact-block { padding-bottom: 8px; }
+.contact-email {
+  display: inline-block;
+  min-height: 44px;
+  font-family: var(--serif);
+  font-size: clamp(22px, 3.6vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--pine);
+  text-decoration: none;
+  word-break: break-word;
+  padding-bottom: 4px;
+  background: linear-gradient(var(--pine), var(--pine)) 0 100% / 0 2px no-repeat;
+  transition: background-size .5s var(--ease);
+}
+.contact-email:hover { background-size: 100% 2px; }
+.legal-name { margin-top: 14px; font-size: 15px; }
+
+/* Footer */
+footer {
+  background: var(--pine-deep);
+  color: var(--muted-on-dark);
+  margin-top: 56px;
+  padding: 32px 0 max(32px, env(safe-area-inset-bottom));
+  font-size: 13px;
+}
+footer .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+}
+footer a { color: var(--muted-on-dark); text-decoration: none; transition: color .25s var(--ease); }
+footer a:hover { color: var(--cream); }
+footer p { margin: 0; color: inherit; }
+
+/* Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  filter: blur(4px);
+  transition: opacity .8s var(--ease-out), transform .8s var(--ease-out), filter .8s var(--ease-out);
+}
+.reveal.is-in { opacity: 1; transform: none; filter: blur(0); }
+.no-js .reveal { opacity: 1; transform: none; filter: none; }
+
+@media (max-width: 640px) {
+  body { font-size: 16px; }
+  .doc-head { padding-top: calc(var(--nav-h) + 56px); padding-bottom: 36px; }
+  section { padding-top: 40px; }
+  .note { padding: 24px 22px 16px; border-radius: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation: none !important; }
+  .reveal { opacity: 1; transform: none; filter: none; }
+}
+</style>
+
+<style>
+.faq { margin-top: 8px; }
+.faq details { border-top: 1px solid var(--line-soft); padding: 4px 0; }
+.faq details:last-child { border-bottom: 1px solid var(--line-soft); }
+.faq summary { cursor: pointer; list-style: none; padding: 16px 32px 16px 0; position: relative; font-weight: 600; color: var(--pine); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 4px; top: 12px; font-size: 22px; font-weight: 400; transition: transform .3s var(--ease); }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { margin: 0 0 16px; }
+.contact-card { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; }
+.contact-card a.btn { display: inline-block; background: var(--pine); color: var(--cream); text-decoration: none; padding: 12px 20px; border-radius: 999px; font-weight: 600; }
+.contact-card a.btn:hover { background: var(--pine-deep); }
+.crosslink { margin-top: 28px; color: var(--muted); }
+</style>
+
+</head>
+<body class="no-js">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Oak Studios home">
+      <img class="brand-mark" src="/oak-tree.svg" alt="Oak Studios logo" width="64" height="64">
+      <span>Oak Studios</span>
+    </a>
+    <a class="nav-back" href="/">Back to site</a>
+  </div>
+</header>
+
+<div class="doc-head">
+  <div class="wrap">
+    <p class="eyebrow reveal">Spell Quest</p>
+    <h1 class="reveal">Privacy Policy</h1>
+    <p class="meta reveal"><span>Effective October 17, 2026</span><span>Provided by Oak Studios LLC</span></p>
+    <p class="summary reveal">Spell Quest is a phonics and spelling game for children in kindergarten through 2nd grade. This policy describes what the app does with information. The short answer: it collects none.</p>
+  </div>
+</div>
+
+<main id="main">
+  <section aria-labelledby="short">
+    <div class="wrap">
+      <div class="note reveal">
+        <h2 id="short">In short</h2>
+        <p>Spell Quest collects no personal information. It has no ads, no tracking, no analytics, no accounts and no chat. Everything your child does in the app stays on your device. The app only goes online through Apple, when a grown-up makes or restores a purchase.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="collect">
+    <div class="wrap">
+      <h2 id="collect" class="reveal">Information we collect</h2>
+      <div class="reveal">
+        <p>None. Spell Quest does not collect, store, share or sell any personal information from children or adults. We never ask for names, email addresses, photos, location, contacts, voice recordings or any other personal details, and the app does not use the camera or microphone.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="on-device">
+    <div class="wrap">
+      <h2 id="on-device" class="reveal">Information stored on your device</h2>
+      <div class="reveal">
+        <p>To keep your child's progress, the app saves game data on the device itself:</p>
+        <ul>
+          <li>levels finished, stars and coins</li>
+          <li>heroes, their gear, and the Lodge's decorations</li>
+          <li>which words have been practiced and mastered</li>
+          <li>play time and words spelled, for the grown-ups' weekly summary</li>
+          <li>settings such as sound, spoken words, the starting land and the break reminder</li>
+        </ul>
+        <p>With the full quest, up to three players each have their own saved progress on the device. None of this is sent to us or anyone else. It is included in your device's own backups, as with any app, and deleting the app deletes it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="purchases">
+    <div class="wrap">
+      <h2 id="purchases" class="reveal">Purchases</h2>
+      <div class="reveal">
+        <p>Spell Quest offers one optional, one-time purchase that unlocks the full quest. Purchases and restores are handled entirely by Apple through the App Store. We never see or receive your name, Apple ID or payment details. Purchase screens and the grown-ups' settings are behind a grown-up check, so children cannot reach them on their own.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="third-party">
+    <div class="wrap">
+      <h2 id="third-party" class="reveal">Ads, tracking and third parties</h2>
+      <div class="reveal">
+        <p>There is no advertising, no third-party analytics or crash reporting, no tracking across apps or websites, no social features, no chat and no links that lead out of the app. No third-party code in the app collects data.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="children">
+    <div class="wrap">
+      <h2 id="children" class="reveal">Children's privacy</h2>
+      <div class="reveal">
+        <p>Spell Quest is made for children ages 5 to 8. Because the app collects no personal information, there is nothing for us to disclose, share or delete. The app is designed to comply with the Children's Online Privacy Protection Act (COPPA) and Apple's guidelines for apps in the Kids category.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="changes">
+    <div class="wrap">
+      <h2 id="changes" class="reveal">Changes to this policy</h2>
+      <div class="reveal">
+        <p>If this policy ever changes, the updated version will be posted on this page with a new effective date. We will never begin collecting personal information from children.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="contact">
+    <div class="wrap">
+      <h2 id="contact" class="reveal">Contact</h2>
+      <div class="reveal">
+        <p>Questions about privacy? Email <a href="mailto:support@oakstudiosllc.com">support@oakstudiosllc.com</a>. Oak Studios LLC makes Spell Quest.</p>
+        <p class="crosslink">Need help with the app? See <a href="/spell-quest/support/">Spell Quest support</a>.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Copyright © <span id="year">2026</span> Oak Studios LLC. All rights reserved.</p>
+    <p><a href="/">Oak Studios</a> &nbsp; <a href="/#privacy">Site privacy</a> &nbsp; <a href="mailto:support@oakstudiosllc.com">support@oakstudiosllc.com</a></p>
+  </div>
+</footer>
+
+<script>
+(() => {
+  document.body.classList.remove('no-js');
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('is-scrolled', scrollY > 8);
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  const reveals = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)) {
+    reveals.forEach(el => el.classList.add('is-in'));
+  } else {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.08 });
+    reveals.forEach(el => io.observe(el));
+  }
+})();
+</script>
+</body>
+</html>

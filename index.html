@@ -454,6 +454,9 @@ p { margin: 0; }
 }
 .feature h3 { color: var(--cream); font-size: clamp(28px, 3.6vw, 38px); margin-top: 18px; }
 .feature p { margin-top: 12px; color: var(--muted-on-dark); max-width: 52ch; }
+.feature-links { position: relative; z-index: 1; font-size: 15px; }
+.feature-links a { color: var(--cream); text-underline-offset: 3px; }
+.feature-links a:hover { text-decoration-thickness: 2px; }
 .pill {
   display: inline-block;
   font-size: 12px;
@@ -741,11 +744,12 @@ footer a:hover { color: var(--cream); }
           <p>Fast, accessible web applications and product sites that work well on any screen, from phone to desktop.</p>
         </article>
       </div>
-      <article class="feature reveal" aria-label="Spell Quest, in development">
+      <article class="feature reveal" aria-label="Spell Quest, coming soon to the App Store">
         <div>
-          <span class="pill">In development</span>
+          <span class="pill">Coming soon to the App Store</span>
           <h3>Spell Quest</h3>
-          <p>Spell words, feed your buddy, and unlock new lands. A spelling game for ages 4&ndash;7.</p>
+          <p>A phonics and spelling adventure for kindergarten through 2nd grade. Spell words, beat friendly monsters and collect heroes across seven lands.</p>
+          <p class="feature-links"><a href="/spell-quest/support/">Support</a> <span aria-hidden="true">&middot;</span> <a href="/spell-quest/privacy/">Privacy</a></p>
         </div>
         <svg class="feature-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><g fill="#f8f1e2"><circle cx="16" cy="12" r="6.5"/><circle cx="10.8" cy="14.5" r="4.5"/><circle cx="21.2" cy="14.5" r="4.5"/><rect x="14.9" y="15" width="2.2" height="7.5" rx="1"/></g><path d="M13.5 24.5 9.5 28M18.5 24.5 22.5 28M16 25v3" stroke="#f8f1e2" stroke-width="1.8" stroke-linecap="round" fill="none"/></svg>
       </article>
